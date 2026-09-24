@@ -29,31 +29,35 @@ saida
 2. periodo mais utilizado
 3. delta percentual do horário
 '''
+continuar = "S"
 
-usoElevador = str(input("Qual Elevador voce mais usa? (A, B OU C)")).upper
+while continuar == "S":
+    usoElevador = str(input("Qual Elevador voce mais usa? (A, B OU C): ")).upper()
 
-countElevador_A = 0
-countElevador_B = 0
-countElevador_C = 0
+    countElevador_A = 0
+    countElevador_B = 0
+    countElevador_C = 0
 
-if usoElevador == "A":
-    countElevador_A += 1
-elif usoElevador == "B":
-    countElevador_B += 1
-if usoElevador == "C":
-    countElevador_C += 1
+    if usoElevador == "A":
+        countElevador_A += 1
+    elif usoElevador == "B":
+        countElevador_B += 1
+    if usoElevador == "C":
+        countElevador_C += 1
 
-usoPeriodo = str(input("Qual Período voce mais usa? (M=Matutino, V=Vespertino, N=Noturno)")).upper
+    usoPeriodo = str(input("Qual Período voce mais usa? (M=Matutino, V=Vespertino, N=Noturno): ")).upper()
+
+    continuar = str(input("Quer continuar? S/N: ")).upper()
 
 countPeriodo_M = 0
 countPeriodo_V = 0
 countPeriodo_N = 0
 
-if usoPeriodo == "A":
+if usoPeriodo == "M":
     countPeriodo_M += 1
-if usoPeriodo == "B":
+if usoPeriodo == "V":
     countPeriodo_V += 1
-if usoPeriodo == "C":
+if usoPeriodo == "N":
     countPeriodo_N += 1
 
 totalUsoPeriodo = countPeriodo_M + countPeriodo_V + countPeriodo_N
@@ -77,10 +81,10 @@ else:
     print("Elevador mais usado foi o C")
 
 if countPeriodo_M > countPeriodo_V:
-    print("Elevador mais usado foi o M")
+    print("Elevador mais usado foi o Matutino")
 elif countPeriodo_M > countPeriodo_N:
-    print("Elevador mais usado foi o N")
+    print("Elevador mais usado foi o Noturno")
 elif countPeriodo_V > countPeriodo_N:
-    print("Elevador mais usado foi o V")
+    print("Elevador mais usado foi o Verspentino")
 else:
-    print("Elevador mais usado foi o N")
+    print("Elevador mais usado foi o Noturno")
